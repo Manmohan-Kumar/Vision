@@ -1,0 +1,32 @@
+<div class="dragndrop" appDrag (files) = "fileDropped($event)">
+<div class="textWrapper" >
+    Drag file or 
+    <a (click)="fileInput.click()">Click</a>
+    to browse
+</div>
+</div>
+<div class="mt-5">
+    <div class="row">
+        <mat-grid-list cols="4" rowHeight="1:1">
+            <mat-grid-tile *ngIf="!isDisabled()">
+                    <div style="position: relative">
+                    <span class="btn-remove-img" (click)="removeImage()">x</span>
+                    <img [src]="fileModel?.url" width="100px" height="100px">                    
+                </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+    </div>
+</div>
+<input type="file" style="display: none;" (change)="onFileSelected($event)" #fileInput>
+<!--<button type="button" (click)="fileInput.click()">Choose File</button>
+<button type="button" (click)="onUpload()">Submit</button>-->
+
+<button type="button" (click)="fileInput.click()" mat-fab extended color="primary">
+    Choose File
+  </button>
+  <button type="button" (click)="onUpload()" mat-fab extended color="accent" [disabled]="isDisabled()">
+    Submit
+  </button>
+  <button (click)="removeImage()" mat-fab extended color="warn" [disabled]="isDisabled()">
+    Remove image
+  </button>

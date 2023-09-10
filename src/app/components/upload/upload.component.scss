@@ -1,0 +1,28 @@
+.dragndrop {
+height: 150px;
+min-width: 100px;
+display: table;
+background-color: bisque;
+width: 300px;
+border: dashed 1px #aaa;
+border-radius: 10px;
+}
+
+.textWrapper {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.btn-remove-img {
+    position:absolute;
+    cursor: pointer;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: whitesmoke;
+    border-radius: 50%;
+    width: 20px;
+    height: auto;
+    text-align: center;
+}
